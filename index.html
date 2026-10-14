@@ -1,0 +1,1022 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DigitalLibrary | Home</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #102653;
+    background:
+        radial-gradient(circle at 10% 20%, #d5e6ff, transparent 35%),
+        radial-gradient(circle at 90% 60%, #e5d8ff, transparent 35%),
+        #f5f8ff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 18px 5%;
+    background: #071638;
+    color: white;
+    border-bottom: 1px solid #00d9ff;
+    box-shadow: 0 5px 30px #07163830;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #55e6ff;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #55e6ff;
+}
+
+/* MAIN LAYOUT */
+.container {
+    max-width: 1600px;
+    margin: auto;
+    padding: 30px 4%;
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+/* PROFILE */
+.profile {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    padding: 28px 22px;
+    border-radius: 24px;
+    color: white;
+    background: linear-gradient(155deg, #102d68, #06142f);
+    border: 1px solid #28dfff;
+    border-left: 5px solid #00e5ff;
+    box-shadow: 0 0 25px #087cff30;
+    position: sticky;
+    top: 100px;
+    overflow-wrap: anywhere;
+}
+
+.profile-label {
+    display: inline-block;
+    padding: 8px 13px;
+    margin-bottom: 22px;
+    border-radius: 25px;
+    color: #77edff;
+    background: #0b4384;
+    border: 1px solid #38cfff80;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.avatar {
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 22px;
+    border: 3px solid #45e4ff;
+    box-shadow: 0 0 0 5px #8a4dff40, 0 0 25px #00cfff70;
+}
+
+.profile h2 {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.profile p {
+    color: #c5d8ff;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 15px;
+}
+
+/* HERO */
+.hero,
+.stats,
+.popular {
+    grid-column: 2;
+    min-width: 0;
+}
+
+.hero {
+    min-height: 325px;
+    padding: 42px 35px;
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        radial-gradient(circle at 85% 20%, #a044ff, transparent 35%),
+        linear-gradient(115deg, #061638, #073e9d 60%, #254eea);
+    border: 1px solid #52dcff;
+    box-shadow: 0 0 30px #087cff35, 0 20px 40px #092b7130;
+}
+
+.hero::after {
+    content: "✦";
+    position: absolute;
+    right: 8%;
+    top: 8%;
+    font-size: 170px;
+    color: #ffffff12;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 640px;
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 9px 14px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    color: #9af1ff;
+    background: #087cff50;
+    border: 1px solid #59ddff70;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 3.5vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, #42eeff, #b5a0ff, #ff9ce8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 540px;
+    margin-bottom: 25px;
+    color: #e0eaff;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(100deg, #00cfff, #5365ff, #bd48ff);
+    box-shadow: 0 0 22px #496aff60;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px #8a65ff90;
+}
+
+.art {
+    position: absolute;
+    right: 5%;
+    bottom: 25px;
+    font-size: clamp(70px, 8vw, 120px);
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px #7d9fff70);
+}
+
+/* STATISTICS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin: 22px 0 32px;
+}
+
+.stat {
+    padding: 22px 18px;
+    border-radius: 20px;
+    border: 1px solid white;
+    box-shadow: 0 10px 25px #244b8812;
+    transition: .3s;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat:nth-child(1) {
+    background: linear-gradient(135deg, #f0e8ff, #ded4ff);
+    border-color: #cbb8ff;
+}
+
+.stat:nth-child(2) {
+    background: linear-gradient(135deg, #e0fff2, #c5f8e8);
+    border-color: #a5efd5;
+}
+
+.stat:nth-child(3) {
+    background: linear-gradient(135deg, #fff5dc, #ffe3b9);
+    border-color: #ffdb9a;
+}
+
+.stat h2 {
+    color: #102b62;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.stat p {
+    color: #526783;
+    font-size: 12px;
+}
+
+/* MODULE HEADING */
+.popular {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.section-title h2 {
+    font-size: 21px;
+}
+
+.section-title p {
+    color: #71819c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.section-title > a {
+    color: #1765f5;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* MODULE CARDS */
+.modules {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.module {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 320px;
+    padding: 18px 14px;
+    border-radius: 20px;
+    border: 1px solid white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 22px #10265310;
+    transition: .3s;
+}
+
+.module::before {
+    content: "";
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    right: -45px;
+    top: -45px;
+    border-radius: 50%;
+    background: #ffffff65;
+    pointer-events: none;
+}
+
+.module:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px #10265325;
+}
+
+.module:nth-child(1) {
+    background: linear-gradient(145deg, #e4f5ff, #c8e5ff);
+    border-color: #9ad5ff;
+}
+
+.module:nth-child(2) {
+    background: linear-gradient(145deg, #f1e7ff, #e1d0ff);
+    border-color: #cdb0ff;
+}
+
+.module:nth-child(3) {
+    background: linear-gradient(145deg, #e2fff1, #c4f5e1);
+    border-color: #a0ebce;
+}
+
+.module:nth-child(4) {
+    background: linear-gradient(145deg, #fff2dc, #ffe1bb);
+    border-color: #ffd09a;
+}
+
+.module:nth-child(5) {
+    background: linear-gradient(145deg, #ffe8f5, #ffd1e9);
+    border-color: #ffb4dc;
+}
+
+.module .emoji {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.module h3 {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 9px;
+}
+
+.chapters {
+    display: inline-block;
+    background: #ffffffd9;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.module p {
+    color: #425a7b;
+    font-size: 11px;
+    line-height: 1.8;
+    margin-bottom: 17px;
+}
+
+/* READ ONLINE AND DOWNLOAD BUTTONS */
+.module-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.module-actions .download {
+    margin-top: 0;
+}
+
+.read-online {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 11px 6px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #ffffff80;
+    box-shadow: 0 5px 12px #10265318;
+    transition: .3s;
+}
+
+.read-online:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.module:nth-child(1) .read-online {
+    background: linear-gradient(100deg, #102d68, #087cff);
+}
+
+.module:nth-child(2) .read-online {
+    background: linear-gradient(100deg, #5125a8, #9a42ff);
+}
+
+.module:nth-child(3) .read-online {
+    background: linear-gradient(100deg, #006747, #13b982);
+}
+
+.module:nth-child(4) .read-online {
+    background: linear-gradient(100deg, #b84b00, #ff9d24);
+}
+
+.module:nth-child(5) .read-online {
+    background: linear-gradient(100deg, #a31564, #ff59b3);
+}
+
+.download {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 11px 6px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 700;
+    box-shadow: 0 5px 12px #10265318;
+    transition: .3s;
+}
+
+.download:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.module:nth-child(1) .download {
+    background: linear-gradient(100deg, #087cff, #0752df);
+}
+
+.module:nth-child(2) .download {
+    background: linear-gradient(100deg, #9a42ff, #6724d9);
+}
+
+.module:nth-child(3) .download {
+    background: linear-gradient(100deg, #13b982, #00885e);
+}
+
+.module:nth-child(4) .download {
+    background: linear-gradient(100deg, #ff9d24, #f06a08);
+}
+
+.module:nth-child(5) .download {
+    background: linear-gradient(100deg, #ff59b3, #db2389);
+}
+
+/* EMBEDDED ONLINE PDF VIEWER */
+.pdf-viewer {
+    display: none;
+    grid-column: 2;
+    min-width: 0;
+    width: 100%;
+    padding: 22px;
+    margin-bottom: 30px;
+    border-radius: 24px;
+    background: linear-gradient(155deg, #102d68, #06142f);
+    border: 1px solid #28dfff;
+    box-shadow: 0 0 25px #087cff30;
+    scroll-margin-top: 100px;
+}
+
+.pdf-viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.pdf-viewer-header h2 {
+    color: #55e6ff;
+    font-size: 20px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.pdf-viewer-header p {
+    color: #c5d8ff;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 7px;
+}
+
+.viewer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.viewer-buttons a,
+.viewer-buttons button {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 22px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.viewer-open {
+    color: white;
+    background: linear-gradient(100deg, #087cff, #6b42ee);
+    border: 1px solid #55e6ff;
+}
+
+.viewer-close {
+    color: white;
+    background: #392047;
+    border: 1px solid #ff9ce8;
+}
+
+.viewer-close:hover {
+    background: #642c58;
+}
+
+#pdfFrame {
+    display: block;
+    width: 100%;
+    height: 650px;
+    border: 1px solid #55e6ff80;
+    border-radius: 12px;
+    background: white;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 28px 15px;
+    color: #c7ddff;
+    background: linear-gradient(90deg, #071638, #123b83, #071638);
+    border-top: 2px solid #36d9ff80;
+    font-size: 12px;
+}
+
+/* ANIMATION */
+@keyframes float {
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* TABLETS */
+@media (max-width: 1250px) {
+    .container {
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .modules {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding: 35px 28px;
+    }
+
+    .art {
+        font-size: 75px;
+    }
+}
+
+/* SMALL SCREENS */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 220px minmax(0, 1fr);
+        padding: 24px 3%;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .modules {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .profile {
+        padding: 22px 17px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    nav {
+        padding: 16px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 22px 4%;
+    }
+
+    .profile,
+    .hero,
+    .stats,
+    .popular,
+    .pdf-viewer {
+        width: 100%;
+    }
+
+    .profile {
+        position: static;
+    }
+
+    .hero {
+        padding: 32px 23px 105px;
+        min-height: 340px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .art {
+        font-size: 75px;
+        right: 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .modules {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .module {
+        min-height: 240px;
+    }
+
+    .section-title h2 {
+        font-size: 18px;
+    }
+
+    .pdf-viewer {
+        padding: 15px;
+        margin-bottom: 25px;
+    }
+
+    .pdf-viewer-header {
+        align-items: flex-start;
+    }
+
+    .pdf-viewer-header h2 {
+        font-size: 16px;
+    }
+
+    #pdfFrame {
+        height: 500px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html" class="logo">📘 DigitalLibrary</a>
+
+    <div class="nav-links">
+        <a href="index.html">⌂ Home</a>
+        <a href="modules.html">▤ Modules</a>
+        <a href="#about">ⓘ About</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <!-- PROFILE -->
+    <section class="profile">
+        <div class="profile-label">👤 MY PROFILE</div>
+
+        <img src="./images/sarath.jpeg"
+             alt="Mummadi Sarath"
+             class="avatar">
+
+        <h2>Mummadi Sarath</h2>
+
+        <p><strong>▣ Roll Number</strong><br>24102a030171</p>
+        <p><strong>🎓 Branch</strong><br>Data Science</p>
+        <p><strong>📖 Course</strong><br>B.Tech</p>
+        <p><strong>🏛 College</strong><br>Mohan Babu University</p>
+    </section>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">🎓 YOUR LEARNING SPACE</div>
+
+            <h1>Learn Smarter.<br><span>Achieve More.</span></h1>
+
+            <p>
+                Explore the world of Data Science through structured
+                modules covering foundations, statistics, data preparation,
+                machine learning, visualization, and big data applications.
+            </p>
+
+            <a href="#modules" class="btn">🚀 Explore Modules →</a>
+        </div>
+
+        <div class="art" aria-hidden="true">📊</div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="stats">
+        <div class="stat">
+            <h2>05</h2>
+            <p>📚 Data Science Modules</p>
+        </div>
+
+        <div class="stat">
+            <h2>20</h2>
+            <p>📖 Total Chapters</p>
+        </div>
+
+        <div class="stat">
+            <h2>24/7</h2>
+            <p>⏰ Learn at Your Pace</p>
+        </div>
+    </section>
+
+    <!-- MODULES -->
+    <section class="popular" id="modules">
+        <div class="section-title">
+            <div>
+                <h2>✨ Data Science Modules</h2>
+                <p>Read online or download your study material.</p>
+            </div>
+
+            <a href="modules.html">View All →</a>
+        </div>
+
+        <div class="modules">
+
+            <!-- MODULE 1 -->
+            <article class="module">
+                <div class="emoji">🔬</div>
+
+                <h3>Module 1: Introduction to Data Science</h3>
+
+                <span class="chapters">4 chapters</span>
+
+                <p>Foundations, data types, life cycle, tools and ethics.</p>
+
+                <div class="module-actions">
+                    <button class="read-online"
+                        onclick="openViewer(1, 'Introduction to Data Science')">
+                        📖 Read Online
+                    </button>
+
+                    <a class="download"
+                       href="./pdfs/module1.pdf"
+                       download="Module1-Introduction-to-Data-Science.pdf">
+                        ↓ Download Module 1 PDF
+                    </a>
+                </div>
+            </article>
+
+            <!-- MODULE 2 -->
+            <article class="module">
+                <div class="emoji">📈</div>
+
+                <h3>Module 2: Statistics and Probability</h3>
+
+                <span class="chapters">4 chapters</span>
+
+                <p>Descriptive statistics, probability, distributions and inference.</p>
+
+                <div class="module-actions">
+                    <button class="read-online"
+                        onclick="openViewer(2, 'Statistics and Probability')">
+                        📖 Read Online
+                    </button>
+
+                    <a class="download"
+                       href="./pdfs/module2.pdf"
+                       download="Module2-Statistics-and-Probability.pdf">
+                        ↓ Download Module 2 PDF
+                    </a>
+                </div>
+            </article>
+
+            <!-- MODULE 3 -->
+            <article class="module">
+                <div class="emoji">🧹</div>
+
+                <h3>Module 3: Data Collection, Cleaning and Exploration</h3>
+
+                <span class="chapters">4 chapters</span>
+
+                <p>Data quality, cleaning, EDA, feature preparation and SQL.</p>
+
+                <div class="module-actions">
+                    <button class="read-online"
+                        onclick="openViewer(3, 'Data Collection, Cleaning and Exploration')">
+                        📖 Read Online
+                    </button>
+
+                    <a class="download"
+                       href="./pdfs/module3.pdf"
+                       download="Module3-Data-Collection-Cleaning-and-Exploration.pdf">
+                        ↓ Download Module 3 PDF
+                    </a>
+                </div>
+            </article>
+
+            <!-- MODULE 4 -->
+            <article class="module">
+                <div class="emoji">🤖</div>
+
+                <h3>Module 4: Machine Learning Fundamentals</h3>
+
+                <span class="chapters">4 chapters</span>
+
+                <p>ML algorithms, training, model selection and evaluation.</p>
+
+                <div class="module-actions">
+                    <button class="read-online"
+                        onclick="openViewer(4, 'Machine Learning Fundamentals')">
+                        📖 Read Online
+                    </button>
+
+                    <a class="download"
+                       href="./pdfs/module4.pdf"
+                       download="Module4-Machine-Learning-Fundamentals.pdf">
+                        ↓ Download Module 4 PDF
+                    </a>
+                </div>
+            </article>
+
+            <!-- MODULE 5 -->
+            <article class="module">
+                <div class="emoji">🌐</div>
+
+                <h3>Module 5: Big Data, Visualization and Applications</h3>
+
+                <span class="chapters">4 chapters</span>
+
+                <p>Big data concepts, visualization techniques, real-world applications and data-driven decision-making.</p>
+
+                <div class="module-actions">
+                    <button class="read-online"
+                        onclick="openViewer(5, 'Big Data, Visualization and Applications')">
+                        📖 Read Online
+                    </button>
+
+                    <a class="download"
+                       href="./pdfs/module5.pdf"
+                       download="Module5-Big-Data-Visualization-and-Applications.pdf">
+                        ↓ Download Module 5 PDF
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ONLINE PDF VIEWER -->
+    <section class="pdf-viewer" id="pdfViewer">
+
+        <div class="pdf-viewer-header">
+            <div>
+                <h2 id="pdfTitle">📖 Online PDF Viewer</h2>
+
+                <p>
+                    Read, scroll and zoom your study material directly here.
+                </p>
+            </div>
+
+            <button class="viewer-close"
+                    onclick="closeViewer()">
+                ✕ Close
+            </button>
+        </div>
+
+        <div class="viewer-buttons">
+            <a id="openPdfTab"
+               class="viewer-open"
+               href="./pdfs/module1.pdf"
+               target="_blank"
+               rel="noopener">
+                Open PDF in New Tab ↗
+            </a>
+        </div>
+
+        <iframe
+            id="pdfFrame"
+            src="about:blank"
+            title="Data Science PDF Viewer">
+        </iframe>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="about">
+    📘 DigitalLibrary · Learn Smarter, Achieve More · © 2026
+</footer>
+
+<!-- PDF VIEWER JAVASCRIPT -->
+<script>
+    function openViewer(moduleNumber, moduleTitle) {
+        const pdfPath = "./pdfs/module" + moduleNumber + ".pdf";
+
+        const viewer = document.getElementById("pdfViewer");
+        const frame = document.getElementById("pdfFrame");
+        const title = document.getElementById("pdfTitle");
+        const openTab = document.getElementById("openPdfTab");
+
+        // Update the title for the selected module.
+        title.textContent =
+            "📖 Module " + moduleNumber + ": " + moduleTitle;
+
+        // Load the selected PDF.
+        frame.src = pdfPath;
+
+        // Update the Open in New Tab link.
+        openTab.href = pdfPath;
+
+        // Show the viewer.
+        viewer.style.display = "block";
+
+        // Scroll to the PDF viewer.
+        viewer.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
+    function closeViewer() {
+        // Stop displaying the current PDF.
+        document.getElementById("pdfFrame").src = "about:blank";
+
+        // Hide the viewer.
+        document.getElementById("pdfViewer").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
+```

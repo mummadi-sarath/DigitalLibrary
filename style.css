@@ -1,0 +1,299 @@
+/* ===== UNIQUE NEON DIGITAL LIBRARY THEME ===== */
+
+:root {
+    --navy: #071638;
+    --blue: #087cff;
+    --cyan: #00e5ff;
+    --purple: #9b4dff;
+    --text: #102653;
+}
+
+body {
+    background:
+        radial-gradient(ellipse at 5% 15%, #d8e9ff 0%, transparent 35%),
+        radial-gradient(ellipse at 95% 35%, #e7dcff 0%, transparent 32%),
+        #f3f7ff;
+    color: var(--text);
+}
+
+/* Dark glass navigation */
+nav {
+    background: rgba(5, 19, 53, 0.97);
+    color: #fff;
+    box-shadow: 0 5px 30px #06183b35;
+    border-bottom: 1px solid #36d9ff35;
+}
+
+.logo {
+    color: #54dcff;
+    text-shadow: 0 0 18px #00aaff55;
+}
+
+nav a:hover {
+    color: #57e7ff;
+}
+
+/* Glowing profile panel */
+.profile {
+    background: linear-gradient(155deg, #102b63, #07152f 85%);
+    color: #fff;
+    border: 1px solid #24d9ff70;
+    border-left: 5px solid #00d9ff;
+    box-shadow:
+        0 0 0 1px #1a6dff30,
+        0 0 25px #087cff25,
+        0 18px 40px #07163825;
+}
+
+.profile-label {
+    background: #0b4384;
+    color: #71eaff;
+    border: 1px solid #38cfff60;
+}
+
+.avatar {
+    border: 3px solid #42ddff;
+    box-shadow: 0 0 0 5px #7451ff35,
+                0 0 24px #00bfff55;
+}
+
+.profile p {
+    color: #c0d7ff;
+}
+
+.profile h2 {
+    color: #fff;
+}
+
+/* Futuristic hero banner */
+.hero {
+    background:
+        radial-gradient(ellipse at 85% 15%, #7c3dff 0%, transparent 40%),
+        linear-gradient(115deg, #061638, #073b92 52%, #174ce3);
+    border: 1px solid #51dfff80;
+    box-shadow:
+        0 0 0 1px #317bff35,
+        0 0 32px #087cff35,
+        0 20px 45px #092b7140;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: 7%;
+    top: -170px;
+    border-radius: 50%;
+    border: 1px solid #ffffff22;
+    box-shadow: 0 0 0 35px #ffffff08,
+                0 0 0 70px #ffffff06;
+    pointer-events: none;
+}
+
+.eyebrow {
+    display: inline-block;
+    background: #087cff55;
+    border: 1px solid #57e6ff60;
+    border-radius: 25px;
+    padding: 9px 15px;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, #48edff, #a9a0ff, #ff91e8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn {
+    background: linear-gradient(100deg, #00cfff, #5365ff, #bd48ff);
+    box-shadow: 0 0 22px #496aff60;
+}
+
+.btn:hover {
+    box-shadow: 0 0 30px #6b65ff95;
+}
+
+/* Bright glass statistic cards */
+.stat {
+    border: 1px solid #ffffffd9;
+    box-shadow: 0 10px 25px #244b8812;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat:nth-child(1) {
+    background: linear-gradient(135deg, #f1eaff, #ded5ff);
+    border-color: #cbb8ff;
+}
+
+.stat:nth-child(2) {
+    background: linear-gradient(135deg, #e3fff4, #c5f8e8);
+    border-color: #a5efd5;
+}
+
+.stat:nth-child(3) {
+    background: linear-gradient(135deg, #fff7df, #ffe6bf);
+    border-color: #ffdb9a;
+}
+
+.stat h2 {
+    color: #102b62;
+}
+
+/* Module cards: five across on wide screens */
+.modules {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.module {
+    position: relative;
+    overflow: hidden;
+    padding: 19px 15px;
+    min-height: 270px;
+    border-radius: 19px;
+    border: 1px solid #ffffff;
+    box-shadow: 0 8px 22px #1026530c;
+}
+
+.module::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: -48px;
+    top: -48px;
+    border-radius: 50%;
+    background: #ffffff65;
+    pointer-events: none;
+}
+
+.module:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px #10265320;
+}
+
+.module:nth-child(1) {
+    background: linear-gradient(145deg, #e4f5ff, #c8e5ff);
+    border-color: #9ad5ff;
+}
+
+.module:nth-child(2) {
+    background: linear-gradient(145deg, #f1e7ff, #e1d0ff);
+    border-color: #cdb0ff;
+}
+
+.module:nth-child(3) {
+    background: linear-gradient(145deg, #e2fff1, #c4f5e1);
+    border-color: #a0ebce;
+}
+
+.module:nth-child(4) {
+    background: linear-gradient(145deg, #fff2dc, #ffe1bb);
+    border-color: #ffd09a;
+}
+
+.module:nth-child(5) {
+    background: linear-gradient(145deg, #ffe8f5, #ffd1e9);
+    border-color: #ffb4dc;
+}
+
+.module .emoji {
+    font-size: 36px;
+    filter: drop-shadow(0 5px 5px #18345b20);
+}
+
+.module h3 {
+    font-size: 14px;
+}
+
+.chapters {
+    background: #ffffffc9;
+    border: 1px solid #ffffff;
+}
+
+.download {
+    width: 100%;
+    text-align: center;
+    padding: 11px 7px;
+    border-radius: 25px;
+    box-shadow: 0 5px 12px #10265318;
+    font-size: 11px;
+}
+
+.module:nth-child(1) .download {
+    background: linear-gradient(100deg, #087cff, #0752df);
+}
+
+.module:nth-child(2) .download {
+    background: linear-gradient(100deg, #9a42ff, #6724d9);
+}
+
+.module:nth-child(3) .download {
+    background: linear-gradient(100deg, #13b982, #00885e);
+}
+
+.module:nth-child(4) .download {
+    background: linear-gradient(100deg, #ff9d24, #f06a08);
+}
+
+.module:nth-child(5) .download {
+    background: linear-gradient(100deg, #ff59b3, #db2389);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #071638, #123b83, #071638);
+    color: #c7ddff;
+    border-top: 2px solid #36d9ff80;
+    margin-top: 20px;
+}
+
+/* Responsive layout */
+@media (max-width: 1200px) {
+    .modules {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 220px minmax(0, 1fr);
+    }
+
+    .modules {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile,
+    .hero,
+    .stats,
+    .popular {
+        width: 100%;
+    }
+
+    .modules {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        margin-left: 7px;
+    }
+}
